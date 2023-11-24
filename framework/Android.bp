@@ -1,0 +1,7 @@
+java_library_static {
+    name: "bliss-power-framework",
+        srcs: [
+        "src/**/*.java",
+        "src/**/*.aidl",
+    ],
+}
