@@ -3,7 +3,9 @@ package org.blissos.powermanagerclient;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.os.PowerManager;
+import android.widget.Button;
+import org.blissos.powermanager.BlissPowerManager;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,9 +14,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        PowerManager pm = (PowerManager) getSystemService(POWER_SERVICE);
-        pm.shutdown(false, "BlissService", false);
-        pm.reboot("BlissService");
+        Button rebootBtn = findViewById(R.id.rebootBtn);
+        Button shutdownBtn = findViewById(R.id.shutdownBtn);
 
+        BlissPowerManager blissPowerManager = BlissPowerManager.getInstance(this);
+
+        rebootBtn.setOnClickListener(v -> blissPowerManager.reboot());
+        shutdownBtn.setOnClickListener(v -> blissPowerManager.shutdown());
     }
 }
