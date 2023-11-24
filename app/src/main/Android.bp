@@ -1,0 +1,18 @@
+android_app {
+    name: "BlissPowerManagerApp",
+    resource_dirs: ["res"],
+    platform_apis: true,
+    
+    srcs: [
+        "java/**/*.java",
+    ],
+    system_ext_specific: true,
+    certificate: "platform",
+
+    static_libs: [
+        "androidx.appcompat_appcompat",
+        "androidx-constraintlayout_constraintlayout",
+        "com.google.android.material_material",
+        "bliss-power-framework",
+    ],
+}
