@@ -81,4 +81,13 @@ public class BlissPowerManager {
             Log.e(TAG, "reboot failed", e);
         }
     }
+
+    public void sleep() {
+        try {
+            if (checkService())
+                sService.sleep();
+        } catch (RemoteException e) {
+            Log.e(TAG, "reboot failed", e);
+        }
+    }
 }

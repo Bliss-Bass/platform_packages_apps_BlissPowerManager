@@ -16,10 +16,12 @@ public class MainActivity extends AppCompatActivity {
 
         Button rebootBtn = findViewById(R.id.rebootBtn);
         Button shutdownBtn = findViewById(R.id.shutdownBtn);
+        Button sleepBtn = findViewById(R.id.sleepBtn);
 
         BlissPowerManager blissPowerManager = BlissPowerManager.getInstance(this);
 
         rebootBtn.setOnClickListener(v -> blissPowerManager.reboot());
         shutdownBtn.setOnClickListener(v -> blissPowerManager.shutdown());
+        sleepBtn.setOnClickListener(v -> blissPowerManager.sleep());
     }
 }
